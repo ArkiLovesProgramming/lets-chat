@@ -28,6 +28,9 @@ class Navigator extends Component {
     api.userApi.getUserById(userId).then(
       res=>{
         this.setState({user: res.data})
+      },
+      err=>{
+        console.log(err)
       }
     )
 
