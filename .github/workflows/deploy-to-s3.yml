@@ -12,12 +12,13 @@ jobs:
         -   uses: actions/checkout@v4
             with:
                 sparse-checkout: .
-        -   run: cd ./build
         -   run: ls -a
-        -   name: running npm ci
+        -   name: running npm
             run: npm ci
         -   name: building npm
             run: npm run build
+        -   run: ls -a
+        -   run: cd ./build
         -   name: sync to S3
             uses: jakejarvis/s3-sync-action@master
             with:
