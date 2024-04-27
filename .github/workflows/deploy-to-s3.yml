@@ -1,0 +1,35 @@
+name: deploy-to-s3
+run-name: ${{ github.actor }} is deploying static website file to s3
+on:
+  push:
+    branches:
+        - frontend
+
+jobs: 
+    build: 
+        defaults:
+            run:
+                shell: bash
+                # github aciton 会自动忽略 checkout 这个 action，所以工作路径不会影响代码 checkout
+                working-directory: ./lets-chat-frontend
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v4
+                with: 
+                    sparse-checkout: |
+                        lets-chat-frontend
+            -   name: running npm
+                run: npm ci
+            -   name: building npm
+                run: npm run build
+            -   run: ls -a
+            -   name: sync to S3
+                uses: jakejarvis/s3-sync-action@master
+                with:
+                    args: --follow-symlinks --delete
+                env:
+                    AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+                    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                    AWS_REGION: 'ca-central-1'   # optional: defaults to us-east-1
+                    SOURCE_DIR: 'lets-chat-frontend/build'      # optional: defaults to entire repository

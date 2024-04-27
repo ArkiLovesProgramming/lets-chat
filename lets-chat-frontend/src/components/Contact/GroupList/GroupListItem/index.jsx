@@ -23,7 +23,7 @@ export default class GroupListItem extends Component {
   }
   
   render() {
-    const { myclassName, groupItem } = this.props
+    const { myclassName } = this.props
     const { usersingroup } = this.state
     const { stringAvatar } = cm
     return (
