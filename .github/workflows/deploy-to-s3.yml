@@ -7,17 +7,17 @@ on:
 
 jobs: 
     build: 
-        # defaults:
-        #     run:
-        #         shell: bash
-        #         working-directory: ./
+        defaults:
+            run:
+                shell: bash
+                working-directory: ./lets-chat-frontend
         runs-on: ubuntu-latest
         steps:
-            # -   uses: actions/checkout@v4
-            #     with: 
-            #         sparse-checkout: |
-            #             lets-chat-frontend
-            # -   run: cd ./lets-chat-frontend
+            -   run: ls -a
+            -   uses: actions/checkout@v4
+                with: 
+                    sparse-checkout: |
+                        lets-chat-frontend
             -   run: ls -a
             -   name: running npm
                 run: npm ci
