@@ -19,9 +19,12 @@ export default class OnlineUsersListItem extends Component {
             }
             return true
         })
-        api.userApi.getUserById(userId).then(
+        api.userApi.getUserById(userId[0]).then(
             res=>{
                 this.setState({username: res.data.username})
+            },
+            err=>{
+                console.log(err.message)
             }
         )
     }

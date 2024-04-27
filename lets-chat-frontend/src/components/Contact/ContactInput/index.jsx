@@ -93,6 +93,8 @@ export default class ContactInput extends Component{
     return (e)=>{
       api.groupApi.addContact(userId, localStorage.getItem("userId")).then(
         res=>{
+          PubSub.publish("contactsAddOneContact", res.data)
+          this.setState({contacts: [res.data, ...this.state.contacts]})
           this.alert("success", "Start to chat with them!")
         }
       )

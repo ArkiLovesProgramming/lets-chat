@@ -13,7 +13,11 @@ export default class GroupListItem extends Component {
   componentDidMount(){
     api.userApi.getUsersByIdS(this.props.groupItem.userIds).then(
       res=>{
+        console.log(res)
         this.setState({usersingroup: res.data})
+      }, 
+      err=>{
+        console.log(err.message)
       }
     )
   }

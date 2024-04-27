@@ -27,6 +27,11 @@ class ContactList extends Component {
     )
   }
 
+  addOneContact = (_, groupItem)=>{
+    let new_contacts = [groupItem, ...this.state.contacts]
+    this.setState({contacts: new_contacts})
+  }
+
   componentDidMount(){
     const userId = localStorage.getItem("userId")
     api.groupApi.getContacts(userId).then(
@@ -35,6 +40,7 @@ class ContactList extends Component {
       }
     )
     PubSub.subscribe("contactsDeleteOneContact", this.deleteOneContact)
+    PubSub.subscribe("contactsAddOneContact", this.addOneContact)
   }
 
   activate = (id) => {
