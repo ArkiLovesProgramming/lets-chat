@@ -13,7 +13,7 @@ jobs:
             with: 
                 sparse-checkout: |
                     lets-chat-frontend
-        -   run: ls -a
+        -   run: cd ./lets-chat-frontend
         -   name: running npm
             run: npm ci
         -   name: building npm
