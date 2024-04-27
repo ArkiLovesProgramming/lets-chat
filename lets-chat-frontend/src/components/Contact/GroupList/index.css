@@ -1,0 +1,50 @@
+.groupList{
+    border-radius: 8px;
+    overflow: scroll;
+    flex-grow: 1;
+    height: 1px;
+    background-color: white;
+}
+
+.groupList_item{
+    display: flex;
+    padding: 12px 20px;
+    line-height: 34px;
+    font-weight: bold;
+}
+
+.groupList_item:hover{
+    background-color: #EBEEF5;
+    cursor: pointer;
+}
+
+.groupList_item > span{
+    flex: 1;
+    margin-left: 10px;
+
+}
+
+.groupList_item .MuiAvatarGroup-avatar{
+     width: 30px;
+     height: 30px;
+     font-size: 14px;
+     /* border-color: linear-gradient(to bottom right, #409EFF, skyblue)!important; */
+     border-color: white!important;
+}
+
+.groupList_item_name{
+    overflow:hidden;
+    text-overflow:ellipsis; 
+    white-space:nowrap;
+}
+
+@media screen and (max-width: 600px) {
+    .groupList_item .MuiAvatarGroup-avatar{
+        display: none;
+    }
+}
+
+.groupList h4{
+    padding: 16px 23px 10px ;
+    margin: 0px;
+}

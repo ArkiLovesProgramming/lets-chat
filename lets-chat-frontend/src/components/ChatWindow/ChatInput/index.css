@@ -1,0 +1,61 @@
+.chatInput{
+    height: fit-content;
+}
+.chatInput_box{
+    padding: 20px 10px;
+    display: flex;
+    background-color: rgb(235, 238, 245);
+}
+
+.chatInput_box input{
+    flex-grow: 1;
+    border: none;
+    font-size: 17px;
+    background-color: transparent;
+
+}
+
+.chatInput_box input:focus{
+    outline: none;
+}
+
+.chatInput_box button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0px;
+    color: grey;
+    background-color: transparent;
+    margin-left: 10px;
+    /* background: linear-gradient(to bottom right, #409EFF, skyblue); */
+}
+
+.chatInput_box button#send{
+    /* background-color: #409EFF; */
+    background: linear-gradient(to bottom right, #409EFF, skyblue);
+    color: white;
+}
+
+.chatInput_box button#send:hover{
+    background: linear-gradient(to bottom right, #1e74ca, skyblue);
+}
+
+.chatInput_box button:hover{
+    /* background: linear-gradient(to bottom right, #1e74ca, skyblue); */
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.1s;
+}
+
+.emojiBox{
+    position: relative;
+}
+
+.emojiBox .emojiPannal{
+    /* display: none; */
+    position: absolute;
+    bottom: 46px;
+    right: -100px;
+    z-index: 1;
+}
+

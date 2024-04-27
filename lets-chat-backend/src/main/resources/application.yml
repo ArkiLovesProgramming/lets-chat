@@ -1,0 +1,18 @@
+spring:
+  #数据源配置
+  data:
+    mongodb:
+      uri: mongodb+srv://arki:arki12345678@chat-cluster0.vgufh8j.mongodb.net/chat?retryWrites=true&w=majority&appName=chat-cluster0
+      database: chat
+    # 主机地址
+#    host: 192.168.40.141
+#    # 数据库
+#    database: articledb
+#    # 默认端口是27017
+#    port: 27017
+    #也可以使用uri连接
+    #uri: mongodb://192.168.40.134:27017/articledb
+
+file:
+  upload:
+    url:

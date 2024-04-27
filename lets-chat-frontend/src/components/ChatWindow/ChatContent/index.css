@@ -1,0 +1,6 @@
+.chatContent{
+    flex-grow: 1;
+    height: 1px;
+    padding: 0px 16px;
+    overflow-y: auto;
+}

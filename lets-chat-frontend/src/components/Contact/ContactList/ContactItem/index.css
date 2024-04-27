@@ -1,0 +1,14 @@
+.contact_item:hover{
+    background-color: #EBEEF5;
+    cursor: pointer;
+}
+
+.contact_item_active{
+    background: linear-gradient(to bottom right, #409EFF, skyblue);
+}
+.contact_item_active div{
+    color: white!important;
+}
+.contact_item_active:hover{
+    background: linear-gradient(to bottom right, #1e74ca, skyblue);
+}

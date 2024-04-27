@@ -1,0 +1,24 @@
+.contact{
+    /* background-color: aqua; */
+    padding: 20px 10px;
+    display: flex;
+    height: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    /* justify-content: space-around; */
+}
+
+.contact .contact_input{
+    background-color: white;
+    padding: 12px 10px;
+    box-sizing: border-box;
+    /* height: 72px; */
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
+.contact .contact_input input{
+    width: -webkit-fill-available;
+    height: 100%;
+    box-sizing: border-box;
+}

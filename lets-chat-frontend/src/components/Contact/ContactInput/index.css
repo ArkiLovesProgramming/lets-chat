@@ -1,0 +1,77 @@
+
+.contact_input div:has(> .myinput input:focus){
+    border: #409EFF solid 1px;
+}
+
+.contact_input div{
+    border: transparent solid 1px;
+}
+
+.contact_input_outer_box{
+    /* position: relative; */
+}
+.contact_result_list{
+    /* position: relative; */
+    /* background-color: white; */
+    width: 100%;
+    z-index: 1;
+    border-radius: 0px 0px 8px 8px;
+
+}
+
+.contact_result_list > ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: auto;
+    max-height: 160px;
+}
+
+.contact_result_list > ul > li{
+    width: inherit;
+    padding: 12px;
+    display: flex;
+}
+
+.contact_result_list > ul > li:hover{
+    width: inherit;
+    background-color: rgb(235, 238, 245);
+    padding: 12px;
+    display: flex;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.contact_result_list > ul > li .result_item_info{
+    margin-left: 10px;
+    line-height: 20px;
+    padding: 2px 0px;
+}
+
+.contact_result_list > ul > li .result_item_info div:first-child{
+    font-weight: bold;
+}
+
+.onlineUsersList{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0px;
+    overflow: auto;
+    /* position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); */
+}
+
+.onlineUsersList .onlineUsersList_item:first-child{
+    margin-left: 10px;
+}
+
+.onlineUsersList .onlineUsersList_item:last-child{
+    margin-right: 10px;
+}
+
+.onlineUsersList .onlineUsersList_item{
+    margin-right: 10px;
+}
+

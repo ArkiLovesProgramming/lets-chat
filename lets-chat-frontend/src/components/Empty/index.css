@@ -1,0 +1,13 @@
+.empty{
+    /* background-color: white; */
+    margin: 0px 15px 20px 0px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.empty .empty_box{
+    margin: auto;
+}

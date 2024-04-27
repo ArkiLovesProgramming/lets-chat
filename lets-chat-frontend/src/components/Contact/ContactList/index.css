@@ -1,0 +1,38 @@
+.contact_list{
+    border-radius: 8px;
+    overflow-y: auto;
+    background-color: white;
+    margin-bottom: 25px;
+    height: 1px;
+    flex-grow: 1;
+}
+
+.contact_item{
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    padding: 16px 16px;
+}
+
+.contact_item_avatar{
+    margin-right: 10px;
+}
+
+.contact_item .contact_item_info{
+    width: calc(100% - 72px);
+}
+
+.contact_item_info > div{
+    line-height: 24px;
+}
+
+.contact_item_info > div:first-child{
+    font-weight: bolder;
+}
+
+.contact_item_info > div:last-child{
+    color: #909399;
+    overflow:hidden;
+    text-overflow:ellipsis; 
+    white-space:nowrap;
+}

@@ -1,0 +1,88 @@
+.navigator{
+    background-color: transparent;
+    height: 100%;
+}
+
+.navigator .naviBox{
+    height: 100%;
+    box-sizing:border-box;
+    padding: 10% 20% 10% 0px;
+    width: fit-content;
+}
+
+.navigator ul{
+    margin: 0px;
+    height: 100%;
+    /* background-color: #409EFF; */
+    background: linear-gradient(to bottom right, #409EFF, skyblue);
+    box-sizing:border-box;
+    padding: 20px 0px;
+    text-align: center;
+    border-radius: 0px 16px 16px 0px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.navigator li{
+    margin-bottom: 10px;
+    margin: 0px 6px;
+    list-style: none;
+}
+
+.navigator li:last-child{
+    margin-top: auto;
+}
+
+.navigator li button{
+    padding: 0px;
+    height: 54px;
+    width: 54px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+}
+
+.navigator li button:hover{
+    background-color: rgb(102, 177, 255);
+    cursor: pointer;
+}
+
+.navigator .userAvatar:hover{
+    background-color: transparent;
+    transform: scale(1.1);
+    transition: 0.05s;
+    cursor: pointer;
+}
+
+.navigator .userAvatar_mobile{
+    display: none;
+    z-index: 1;
+    background-color: #DCDFE6;
+}
+
+/* .navigator .naviBox{
+    max-width: 100%;
+    visibility: visible;
+} */
+
+
+@media screen and (max-width: 600px) {
+    .navigator .naviBox{
+        display: none;
+        /* overflow: hidden;
+        max-width: 0px;
+        visibility: hidden;
+        transition: max-width 0.1s, visibility 0.05s; */
+    }
+    .navigator .userAvatar_mobile{
+        margin-top: auto;
+        position: fixed;
+        display: block;
+        left: 2%;
+        bottom: 2%;
+    }
+    .navigator{
+        width: 0px;
+    }
+}
