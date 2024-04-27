@@ -13,7 +13,6 @@ jobs:
                 working-directory: ./lets-chat-frontend
         runs-on: ubuntu-latest
         steps:
-            -   run: ls -a
             -   uses: actions/checkout@v4
                 with: 
                     sparse-checkout: |
