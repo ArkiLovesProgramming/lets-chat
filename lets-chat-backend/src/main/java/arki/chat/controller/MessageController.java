@@ -1,5 +1,6 @@
 package arki.chat.controller;
 
+import arki.chat.annotation.TokenRequired;
 import arki.chat.pojo.Message;
 import arki.chat.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @RequestMapping("/api/message")
+@TokenRequired
 public class MessageController {
 
     @Autowired
