@@ -13,6 +13,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * user service layer
+ */
 @Service
 public class UserService {
 
@@ -26,6 +29,10 @@ public class UserService {
         userRepository.save(user);
     }
 
+    /**
+     * Fetch all users
+     * @return
+     */
     public List<User> findAllUsers() {
         List<User> users = userRepository.findAll();
         return users;
@@ -38,6 +45,12 @@ public class UserService {
         return null;
     }
 
+    /**
+     * Verifying the reality of user
+     * @param username
+     * @param password
+     * @return
+     */
     public User verify(String username, String password){
         Criteria criteria = new Criteria();
         criteria.andOperator(
@@ -49,12 +62,22 @@ public class UserService {
         return user;
     }
 
+    /**
+     * Get a group of users basing on string array ids
+     * @param ids
+     * @return
+     */
     public List<User> UsersByIds(String[] ids){
         Query query = new Query(Criteria.where("id").in(ids));
         List<User> users = mongoTemplate.find(query, User.class);
         return users;
     }
 
+    /**
+     * Fuzzy query users by username
+     * @param searchText
+     * @return
+     */
     public List<User> searchByUsernameSimiliarity(String searchText) {
         String regex = ".*"+ searchText +".*"; // 这里的正则表达式表示包含"ark"的任意位置
         Criteria criteria = Criteria.where("username").regex(regex, "i"); // "i"表示不区分大小写

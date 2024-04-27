@@ -60,17 +60,20 @@ public class UserController {
         return map;
     }
 
+    @TokenRequired
     @GetMapping("/getUserById/{userId}")
     public User getUserById(@PathVariable String userId){
         return userService.findById(userId);
     }
 
+    @TokenRequired
     @PostMapping("/getUsersByIds")
     public List<User> getUserById(@RequestBody HashMap data){
         ArrayList<String> ids = (ArrayList<String>) data.get("userIds");
         return userService.UsersByIds(ids.toArray(new String[0]));
     }
 
+    @TokenRequired
     @GetMapping("/getUsersByUsername/{username}")
     public List<User> getUsersByUsername(@PathVariable String username){
         return userService.searchByUsernameSimiliarity(username);

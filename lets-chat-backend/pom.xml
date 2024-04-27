@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>arki.chat</groupId>
-    <artifactId>chat</artifactId>
+    <artifactId>lets-chat-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>chat</name>
-    <description>chat</description>
+    <name>lets-chat-backend</name>
+    <description>lets-chat-backend</description>
     <properties>
         <java.version>8</java.version>
     </properties>
