@@ -2,7 +2,7 @@ import PubSub from "pubsub-js";
 
 let websocket = undefined;
 
-const base_url = "localhost:8080"
+const base_url = "letschat.api.arkilovesprogramming.com:80"
 
 const basic_url = `ws://${base_url}/websocket/`
 
