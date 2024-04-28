@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const base_url = "http://localhost:8080/api"
+const base_url = "http://letschat.api.arkilovesprogramming.com:80/api"
 
 const token = localStorage.getItem("token")
 
