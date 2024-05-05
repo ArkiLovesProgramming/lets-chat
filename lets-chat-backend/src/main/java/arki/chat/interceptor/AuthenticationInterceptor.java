@@ -32,7 +32,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             }
             HandlerMethod handlerMethod = (HandlerMethod) handler;
             TokenRequired tokenRequired = handlerMethod.getMethodAnnotation(TokenRequired.class);
-            TokenRequired classTokenRequired = handlerMethod.getClass().getAnnotation(TokenRequired.class);
+            TokenRequired classTokenRequired = handlerMethod.getBeanType().getAnnotation(TokenRequired.class); // 修改此处获取类级别的注解
             if ( (tokenRequired != null && tokenRequired.value()) || ( classTokenRequired != null && classTokenRequired.value())){
                 if (token == null || !jwtService.verifyJWT(token)){
                     LOGGER.warning("Token is null or token can not be verified!");
