@@ -1,7 +1,7 @@
 import axios from "axios"
 
-// const base_url = "https://letschat.api.arkilovesprogramming.com:443/api"
-const base_url = "http://localhost:8080/api"
+const base_url = "https://letschat.api.arkilovesprogramming.com:443/api"
+// const base_url = "http://localhost:8080/api"
 
 // Request interceptors for API calls
 axios.interceptors.request.use(
