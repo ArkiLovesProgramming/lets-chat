@@ -1,5 +1,6 @@
 package arki.chat.service;
 
+import arki.chat.annotation.TokenRequired;
 import arki.chat.dao.MessageRepository;
 import arki.chat.pojo.Message;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Message service layer
+ */
 @Service
 public class MessageService {
 
@@ -31,7 +35,11 @@ public class MessageService {
         messageRepository.save(message);
     }
 
-
+    /**
+     * used to fetch the last message sent in a certain group
+     * @param groupId
+     * @return
+     */
     public Message getLastMessageByGroupId(String groupId){
         Query query = Query.query(Criteria.where("chatRoomId").is(groupId));
         List<Message> messages = mongoTemplate.find(query, Message.class);
@@ -58,6 +66,11 @@ public class MessageService {
         return new Date(timestampLong);
     }
 
+    /**
+     * Fetch all message from a group
+     * @param groupId
+     * @return
+     */
     public List<Message> AllMessagesByGroupId(String groupId){
         Query query = Query.query(Criteria.where("chatRoomId").is(groupId));
         List<Message> messages = mongoTemplate.find(query, Message.class);

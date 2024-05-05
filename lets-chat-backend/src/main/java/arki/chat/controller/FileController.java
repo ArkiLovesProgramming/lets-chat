@@ -18,37 +18,56 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.logging.Logger;
 
+/**
+ * Controller for handling file upload requests.
+ */
 @RestController
 @RequestMapping("/file")
 public class FileController {
-    //     获取日志记录器
+    // Get the logger
     private static final Logger LOGGER = Logger.getLogger(ChatWSServer.class.getName());
 
+    /**
+     * Handle file upload requests.
+     *
+     * @param files   The array of files to upload
+     * @param request The HTTP request object
+     * @return A HashMap containing the upload result
+     * @throws UnsupportedEncodingException If the encoding is not supported
+     */
     @PostMapping("/upload")
     public HashMap upload(@RequestParam CommonsMultipartFile[] files, HttpServletRequest request) throws UnsupportedEncodingException {
         HashMap result = new HashMap<>();
 
+        // Get the storage path for uploaded files
         String filePath = request.getServletContext().getRealPath("/uploadFile");
-//        如果路径不存在，创建一个
+
+        // If the path does not exist, create one
         File fileFolder = new File(filePath);
-        if (!fileFolder.exists()){
+        if (!fileFolder.exists()) {
             fileFolder.mkdirs();
         }
 
-        for(int i=0;i<files.length;i++){
+        // Iterate through the array of uploaded files
+        for (int i = 0; i < files.length; i++) {
+            // Get the original filename and convert it to UTF-8 encoding
             String fileName = new String(files[i].getOriginalFilename().getBytes("ISO-8859-1"), "UTF-8");
-            File dest = new File(filePath +'/'+ new Date().getTime() + "-" + fileName);
+            // Create the destination file object
+            File dest = new File(filePath + '/' + new Date().getTime() + "-" + fileName);
             try {
+                // Save the file to the destination file
                 files[i].transferTo(dest);
             } catch (Exception e) {
+                // If an exception occurs, log the error and return an error message
                 LOGGER.severe(e.getMessage());
-                result.put("code",2);
-                result.put("result","程序错误，请重新上传");
+                result.put("code", 2);
+                result.put("result", "Program error, please upload again");
                 return result;
             }
         }
-        result.put("code",1);
-        result.put("result","文件上传成功");
+        // Return the upload success result
+        result.put("code", 1);
+        result.put("result", "File uploaded successfully");
         return result;
     }
 }

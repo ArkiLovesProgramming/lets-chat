@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
+/**
+ * JWT service, used to manage JWT logic
+ */
 @Service
 public class JWTService {
     // private key, this is symmetric encryption
