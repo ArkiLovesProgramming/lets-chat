@@ -15,8 +15,8 @@ export default class ContactItem extends Component {
     componentDidMount(){
         const {contactGroupItem} = this.props
         const myuserid = localStorage.getItem("userId")
-        const userId = []
-        if (contactGroupItem != undefined && contactGroupItem.userIds != undefined){
+        let userId = []
+        if (contactGroupItem !== undefined && contactGroupItem.userIds !== undefined){
             userId = contactGroupItem.userIds.filter(item=>{
                 if (item !== myuserid){
                     return true
