@@ -15,12 +15,17 @@ export default class ContactItem extends Component {
     componentDidMount(){
         const {contactGroupItem} = this.props
         const myuserid = localStorage.getItem("userId")
-        const userId = contactGroupItem.userIds.filter(item=>{
-            if (item !== myuserid){
-                return true
-            }
-            return false
-        })
+        const userId = []
+        if (contactGroupItem != undefined && contactGroupItem.userIds != undefined){
+            userId = contactGroupItem.userIds.filter(item=>{
+                if (item !== myuserid){
+                    return true
+                }
+                return false
+            })
+        } else {
+            return;
+        }
         api.userApi.getUserById(userId[0]).then(
             res=>{
                 if (res.data !== undefined){
