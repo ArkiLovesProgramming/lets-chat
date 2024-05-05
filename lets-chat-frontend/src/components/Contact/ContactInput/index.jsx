@@ -91,8 +91,11 @@ export default class ContactInput extends Component{
 
   clickResultContact = (userId)=>{
     return (e)=>{
+      console.log(userId, localStorage.getItem("userId"))
       api.groupApi.addContact(userId, localStorage.getItem("userId")).then(
         res=>{
+          console.log("这里看看")
+          console.log(res.data)
           PubSub.publish("contactsAddOneContact", res.data)
           this.setState({contacts: [res.data, ...this.state.contacts]})
           this.alert("success", "Start to chat with them!")

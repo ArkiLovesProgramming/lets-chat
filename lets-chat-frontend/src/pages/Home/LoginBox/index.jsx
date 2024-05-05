@@ -64,7 +64,7 @@ export default class LoginBox extends Component {
                         res2=>{
                             PubSub.publish("navi_resetUser", res2.data)
                         }
-                    )  
+                    ) 
                 } else {
                     this.alert("error", "Failed to authenticate!")
                 }

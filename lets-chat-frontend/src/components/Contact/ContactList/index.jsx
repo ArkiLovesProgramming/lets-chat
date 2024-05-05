@@ -28,6 +28,8 @@ class ContactList extends Component {
   }
 
   addOneContact = (_, groupItem)=>{
+    console.log("到这里")
+    console.log(groupItem)
     let new_contacts = [groupItem, ...this.state.contacts]
     this.setState({contacts: new_contacts})
   }

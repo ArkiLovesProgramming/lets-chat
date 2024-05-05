@@ -26,11 +26,14 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         if (handler instanceof HandlerMethod) {
-            String token = request.getHeader("Authorization").substring(7);
+            String token = null;
+            if (request.getHeader("Authorization") != null){
+                token = request.getHeader("Authorization").substring(7);
+            }
             HandlerMethod handlerMethod = (HandlerMethod) handler;
             TokenRequired tokenRequired = handlerMethod.getMethodAnnotation(TokenRequired.class);
             TokenRequired classTokenRequired = handlerMethod.getClass().getAnnotation(TokenRequired.class);
-            if ( (tokenRequired != null && tokenRequired.value()) ||( classTokenRequired != null && classTokenRequired.value())){
+            if ( (tokenRequired != null && tokenRequired.value()) || ( classTokenRequired != null && classTokenRequired.value())){
                 if (token == null || !jwtService.verifyJWT(token)){
                     LOGGER.warning("Token is null or token can not be verified!");
                     response.setStatus(HttpServletResponse.SC_FORBIDDEN);
