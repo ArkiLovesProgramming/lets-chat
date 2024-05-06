@@ -5,14 +5,25 @@
     height: 100%;
     box-sizing: border-box;
     padding: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.loginBox_box{
+    margin: 0px auto;
+    max-width: 800px;
+    height: 500px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
 }
 
 .loginBox_window{
-    margin: 0px auto;
-    width: 400px;
+    /* margin: 0px auto; */
+    min-width: 400px;
     height: 500px;
-    background-color: #F2F6FC;
-    border-radius: 8px;
+    /* background-color: #F2F6FC; */
     box-sizing: border-box;
     padding: 16px 36px 36px 36px;
     display: flex;
@@ -55,4 +66,20 @@
     text-align: center;
     margin-bottom: 10px;
     color: #606266;
+}
+
+.loginBox_right{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.loginBox_right img{
+   width: 100%;
+}
+
+@media screen and (max-width: 925px) {
+    .loginBox_right{
+        display: none;
+    }
 }

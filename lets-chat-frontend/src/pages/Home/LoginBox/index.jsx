@@ -15,6 +15,7 @@ import InputLabel from '@mui/material/InputLabel';
 import api from '../../../common/api';
 import MyAlert from '../../../components/MyAlert';
 import PubSub from 'pubsub-js';
+import Divider from '@mui/material/Divider';
 
 export default class LoginBox extends Component {
 
@@ -94,40 +95,48 @@ export default class LoginBox extends Component {
         const { showPassword, usernameValue, passwordValue } = this.state
         return (
             <div className='loginBox'>
-                <div className='loginBox_window'>
-                    <h1 style={{textAlign: "center"}}>Login</h1>
-                    <FormControl variant="standard">
-                        <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-                            <PersonOutlineOutlinedIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                            <TextField value={usernameValue} onChange={this.changeState("usernameValue")} id="input-with-sx" label="Username" variant="standard" />
-                        </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-                            <LockOutlinedIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                            <FormControl sx={{ m: 1, width: '25ch' }} variant="standard">
-                                <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
-                                <Input
-                                    value={passwordValue} onChange={this.changeState("passwordValue")}
-                                    id="standard-adornment-password"
-                                    type={showPassword ? 'text' : 'password'}
-                                    endAdornment={
-                                    <InputAdornment position="end">
-                                        <IconButton
-                                        aria-label="toggle password visibility"
-                                        onClick={this.handleClickShowPassword}
-                                        onMouseDown={this.handleMouseDownPassword}
-                                        >
-                                        {showPassword ? <VisibilityOff /> : <Visibility />}
-                                        </IconButton>
-                                    </InputAdornment>
-                                    }
-                                />
+                <div className='loginBox_box'>
+                    <div className='loginBox_left'>
+                        <div className='loginBox_window'>
+                            <h1 style={{textAlign: "center"}}>Login</h1>
+                            <FormControl variant="standard">
+                                <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                                    <PersonOutlineOutlinedIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                                    <TextField value={usernameValue} onChange={this.changeState("usernameValue")} id="input-with-sx" label="Username" variant="standard" />
+                                </Box>
+                                <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                                    <LockOutlinedIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                                    <FormControl sx={{ m: 1, width: '25ch' }} variant="standard">
+                                        <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+                                        <Input
+                                            value={passwordValue} onChange={this.changeState("passwordValue")}
+                                            id="standard-adornment-password"
+                                            type={showPassword ? 'text' : 'password'}
+                                            endAdornment={
+                                            <InputAdornment position="end">
+                                                <IconButton
+                                                aria-label="toggle password visibility"
+                                                onClick={this.handleClickShowPassword}
+                                                onMouseDown={this.handleMouseDownPassword}
+                                                >
+                                                {showPassword ? <VisibilityOff /> : <Visibility />}
+                                                </IconButton>
+                                            </InputAdornment>
+                                            }
+                                        />
+                                    </FormControl>
+                                </Box>
+                                <Button onClick={this.login} sx={{marginTop: "20px"}} variant="contained">Login</Button>
+                                <div style={{height: "1px", margin: "auto"}}></div>
+                                <span className='singupButton_text'>or sign up using</span>
+                                <div onClick={this.toSignup} className='singupButton'>SIGN UP</div>
                             </FormControl>
-                        </Box>
-                        <Button onClick={this.login} sx={{marginTop: "20px"}} variant="contained">Login</Button>
-                        <div style={{height: "1px", margin: "auto"}}></div>
-                        <span className='singupButton_text'>or sign up using</span>
-                        <div onClick={this.toSignup} className='singupButton'>SIGN UP</div>
-                    </FormControl>
+                        </div>
+                    </div>
+                    <Divider orientation="vertical" variant="middle" flexItem />
+                    <div className='loginBox_right'>
+                        <img src="/static/cha.png" alt="" />
+                    </div>
                 </div>
                 <MyAlert open={this.state.alert.open} closeAlert={this.closeAlert} _content={this.state.alert.content} _severity={this.state.alert.severity}/>
             </div>
