@@ -152,7 +152,7 @@ export default class SignupBox extends Component {
                                         />
                                     </FormControl>
                                 </Box>
-                                <Button onClick={this.signup} sx={{marginTop: "20px"}} variant="contained">Sign up</Button>
+                                <Button style={{backgroundColor: "rgb(106, 99, 246)"}} onClick={this.signup} sx={{marginTop: "20px"}} variant="contained">Sign up</Button>
                                 <div style={{height: "1px", margin: "auto"}}></div>
                                 <span className='singupButton_text'>Have a account already? Login in using</span>
                                 <div onClick={this.toLogin} className='singupButton'>Login</div>

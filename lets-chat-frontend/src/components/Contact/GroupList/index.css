@@ -16,6 +16,7 @@
 .groupList_item:hover{
     background-color: #EBEEF5;
     cursor: pointer;
+    
 }
 
 .groupList_item > span{

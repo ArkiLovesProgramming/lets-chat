@@ -61,7 +61,7 @@ class Navigator extends Component {
               <li>
                   <button onClick={this.toHome} className='userAvatar'>
                     {user !== "loading" ? (
-                      <div className='contact_item_avatar'>
+                      <div className=''>
                         <StyledBadge
                           overlap="circular"
                           anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
@@ -72,7 +72,7 @@ class Navigator extends Component {
                         </StyledBadge>
                       </div>
                     ) : (
-                      <div className='contact_item_avatar'>
+                      <div className=''>
                           <Skeleton animation="wave" variant="circular" width={44} height={44} />
                       </div>
                     )}

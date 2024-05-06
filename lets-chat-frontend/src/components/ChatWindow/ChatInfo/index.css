@@ -10,7 +10,7 @@
     border-radius: 50%;
     border: none;
     vertical-align: bottom;
-    background: linear-gradient(to bottom right, #409EFF, skyblue);
+    background: linear-gradient(to bottom right, #409EFF, rgb(106, 99, 246));
     color: white;
     margin-left: 5px;
 }

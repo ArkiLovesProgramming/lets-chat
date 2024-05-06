@@ -17,6 +17,10 @@ import MyAlert from '../../../components/MyAlert';
 import PubSub from 'pubsub-js';
 import Divider from '@mui/material/Divider';
 
+
+// 生成好看的插图
+// https://undraw.co/illustrations
+
 export default class LoginBox extends Component {
 
     state = {
@@ -126,7 +130,7 @@ export default class LoginBox extends Component {
                                         />
                                     </FormControl>
                                 </Box>
-                                <Button onClick={this.login} sx={{marginTop: "20px"}} variant="contained">Login</Button>
+                                <Button style={{backgroundColor: "rgb(106, 99, 246)"}} onClick={this.login} sx={{marginTop: "20px"}} variant="contained">Login</Button>
                                 <div style={{height: "1px", margin: "auto"}}></div>
                                 <span className='singupButton_text'>or sign up using</span>
                                 <div onClick={this.toSignup} className='singupButton'>SIGN UP</div>
