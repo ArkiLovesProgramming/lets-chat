@@ -4,11 +4,15 @@
 }
 
 .contact_item_active{
-    background: linear-gradient(to bottom right, #409EFF, skyblue);
+    color: white;
+    /* background: linear-gradient(to bottom right, #409EFF, skyblue); */
+    background: rgb(63, 61, 84);
+    /* background-color: rgb(106, 99, 246); */
 }
 .contact_item_active div{
     color: white!important;
 }
 .contact_item_active:hover{
-    background: linear-gradient(to bottom right, #1e74ca, skyblue);
+    background-color: rgb(53, 51, 70)!important;
+    /* background: linear-gradient(to bottom right, #1e74ca, skyblue); */
 }

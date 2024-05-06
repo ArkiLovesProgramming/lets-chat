@@ -14,7 +14,8 @@
     margin: 0px;
     height: 100%;
     /* background-color: #409EFF; */
-    background: linear-gradient(to bottom right, #409EFF, skyblue);
+    /* background: linear-gradient(to bottom right, #409EFF, skyblue); */
+    background-color: rgb(63, 61, 84);
     box-sizing:border-box;
     padding: 20px 0px;
     text-align: center;
@@ -44,7 +45,9 @@
 }
 
 .navigator li button:hover{
-    background-color: rgb(102, 177, 255);
+    background-color: rgb(53, 51, 70);
+    /* background-color: rgb(106, 99, 246); */
+    
     cursor: pointer;
 }
 

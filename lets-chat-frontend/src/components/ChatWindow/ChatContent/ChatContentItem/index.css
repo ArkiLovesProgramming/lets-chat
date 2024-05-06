@@ -11,12 +11,14 @@
 }
 
 .chatContentItem_right .chatContentItem_bubble{
+    font-weight: 500;
     border-radius: 8px;
     border-radius: 0px 8px 8px 8px;
     padding: 14px;
     line-height: 22px;
-    background: linear-gradient(to bottom right, #409EFF, skyblue);
-    color: white;
+    background-color: rgb(235, 238, 245);
+    /* background: linear-gradient(to bottom right, #409EFF, rgb(106, 99, 246)); */
+    color: black;
     font-size: 15px;
     max-width: 73%;
 }
@@ -53,7 +55,9 @@
 }
 
 .chatContentItem_fromMe .chatContentItem_bubble{
+    background-color: rgb(106, 99, 246)!important;
     margin-left: auto;
+    color: white;
     border-radius: 8px 0px 8px 8px;
 }
 
